@@ -1,0 +1,16 @@
+.box { display: grid; gap: 12px; }
+.summary { display: flex; gap: 10px; align-items: center; padding: 10px 12px; background: var(--mm-warn-bg); color: var(--mm-warn-ink); }
+.summary[data-ok] { background: var(--mm-ok-bg); color: var(--mm-ok); }
+.summary span { display: grid; gap: 1px; }
+.summary b { font-size: 13.5px; }
+.summary small { font-size: 12px; opacity: 0.9; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { display: grid; grid-template-columns: 24px 1fr auto auto; gap: 10px; align-items: center; padding: 9px 0; border-bottom: 1px dashed var(--mm-line-strong); }
+.mark { width: 22px; height: 22px; display: grid; place-items: center; background: var(--mm-crit-bg); color: var(--mm-crit); }
+li[data-e='ok'] .mark { background: var(--mm-ok-bg); color: var(--mm-ok); }
+li[data-e='pend'] .mark { background: var(--mm-warn-bg); color: var(--mm-warn-ink); }
+.t { display: grid; gap: 1px; min-width: 0; }
+.t b { font-size: 13px; }
+.t small { font-size: 11.5px; color: var(--mm-ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.add { display: flex; gap: 8px; align-items: center; }
+.add > :first-child { flex: 1; }

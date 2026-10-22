@@ -1,0 +1,17 @@
+.pill { position: fixed; right: 16px; bottom: 16px; z-index: 1000; display: flex; padding: 3px; gap: 2px; background: var(--mm-rail); box-shadow: 0 6px 22px -6px rgba(0, 0, 0, 0.45), 0 0 0 1px var(--mm-rail-line); border-radius: var(--mm-r-xs); }
+.pill button { width: 38px; height: 34px; display: grid; place-items: center; border: 0; background: none; color: var(--mm-rail-ink-3); cursor: pointer; border-radius: var(--mm-r-xs); transition: background 140ms var(--mm-ease), color 140ms; }
+.pill button:hover { color: #fff; background: var(--mm-rail-2); }
+.pill button[data-on] { background: var(--mm-forge); color: #0b1b30; }
+@media (max-width: 62em) { .pill { display: none; } }
+
+.stage { position: fixed; inset: 0; z-index: 900; display: grid; grid-template-rows: auto 1fr; justify-items: center; align-items: center; padding: 14px 24px 24px; gap: 12px; background: var(--mm-canvas); background-image: radial-gradient(var(--mm-line) 1.2px, transparent 1.3px); background-size: 22px 22px; animation: in 220ms var(--mm-ease); }
+@keyframes in { from { opacity: 0; } to { opacity: 1; } }
+.label { display: flex; gap: 14px; align-items: center; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mm-ink-3); }
+.label button { display: inline-flex; gap: 4px; align-items: center; font: inherit; letter-spacing: inherit; text-transform: inherit; background: var(--mm-surface); border: 1px solid var(--mm-line-strong); color: var(--mm-ink); padding: 5px 10px; cursor: pointer; border-radius: var(--mm-r-md); overflow: clip; }
+.label button:hover { border-color: var(--mm-ink); }
+.outer { position: relative; }
+.device { position: absolute; top: 0; left: 0; transform-origin: top left; padding: 12px; box-sizing: border-box; background: #11151c; border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.5), 0 0 0 2px #2a303b; }
+.device[data-kind='mobile'] { border-radius: 40px; padding: 12px; }
+.device[data-kind='mobile']::before { content: ''; position: absolute; top: 11px; left: 50%; width: 96px; height: 20px; margin-left: -48px; border-radius: 12px; background: #000; z-index: 2; pointer-events: none; }
+.device iframe { display: block; border: 0; background: var(--mm-canvas); border-radius: 12px; }
+.device[data-kind='mobile'] iframe { border-radius: 30px; }

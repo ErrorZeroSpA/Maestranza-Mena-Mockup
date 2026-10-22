@@ -1,0 +1,11 @@
+.btn { display: flex; align-items: center; gap: 8px; height: 34px; padding: 0 10px; background: var(--mm-sunken); border: 1px solid var(--mm-line); color: var(--mm-ink-2); transition: border-color 140ms; }
+.btn:hover { border-color: var(--mm-line-strong); color: var(--mm-ink); }
+.btn:focus-visible { outline: 2px solid var(--mm-forge); outline-offset: 1px; }
+.txt { display: grid; line-height: 1.05; text-align: left; }
+.txt small { font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mm-ink-3); }
+.txt b { font-size: 12.5px; font-weight: 700; color: var(--mm-ink); }
+.item { display: grid; gap: 1px; }
+.item small { font-size: 11.5px; color: var(--mm-ink-3); }
+@media (max-width: 62em) { .txt small { display: none; } }
+
+.btn { border-radius: var(--mm-r-md); }

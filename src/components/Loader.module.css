@@ -1,0 +1,11 @@
+.box { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 24px; color: var(--mm-ink); }
+.mark { width: 64px; height: 64px; }
+.mark svg { width: 100%; height: 100%; display: block; }
+.gear { transform-box: view-box; transform-origin: 0 0; transform: translate(24px, 24px); animation: spin 2.4s linear infinite; }
+@keyframes spin { from { transform: translate(24px, 24px) rotate(0deg); } to { transform: translate(24px, 24px) rotate(360deg); } }
+.box b { font-size: 16px; font-weight: 700; }
+.box small { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mm-ink-3); }
+.bar { display: block; width: 160px; height: 3px; background: var(--mm-tint-2); position: relative; overflow: hidden; margin-top: 4px; }
+.bar::after { content: ''; position: absolute; inset: 0; width: 40%; background: var(--mm-forge); animation: slide 1.1s var(--mm-ease) infinite; }
+@keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
+@media (prefers-reduced-motion: reduce) { .gear, .bar::after { animation: none; } .bar::after { width: 100%; opacity: 0.5; } }

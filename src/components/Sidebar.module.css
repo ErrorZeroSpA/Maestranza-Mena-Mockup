@@ -1,0 +1,75 @@
+.rail {
+  position: fixed; inset: 0 auto 0 0; width: var(--mm-rail-w);
+  background: var(--mm-rail); color: var(--mm-rail-ink);
+  display: flex; flex-direction: column; z-index: 40;
+}
+.collapse { position: absolute; top: 24px; right: -13px; width: 26px; height: 26px; display: grid; place-items: center; background: var(--mm-rail-2); color: var(--mm-rail-ink); border: 1px solid var(--mm-rail-line); border-radius: 50%; cursor: pointer; z-index: 2; transition: background 140ms var(--mm-ease), transform 140ms var(--mm-ease); padding: 0; }
+.collapse:hover { background: var(--mm-forge); color: #0b1b30; }
+.collapse:active { transform: scale(0.94); }
+.rail { transition: width 200ms var(--mm-ease); }
+.brand { display: flex; align-items: center; gap: 12px; padding: 20px 18px 18px; color: inherit; text-decoration: none; border-bottom: 1px solid var(--mm-rail-line); }
+.brand span { display: flex; flex-direction: column; line-height: 1; }
+.brand b { font-size: 20px; font-weight: 800; letter-spacing: 0.06em; }
+.brand small { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mm-rail-ink-3); margin-top: 5px; }
+
+.nav { flex: 1; padding: 16px 10px; display: grid; align-content: start; gap: 18px; overflow-y: auto; }
+.group { display: grid; gap: 2px; }
+.groupLabel { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mm-rail-ink-3); padding: 0 10px 6px; }
+
+.item { position: relative; display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: var(--mm-r-sm); color: var(--mm-rail-ink-3); text-decoration: none; transition: background 140ms var(--mm-ease), color 140ms var(--mm-ease); }
+.item:hover { background: var(--mm-rail-2); color: var(--mm-rail-ink); }
+.item[data-active] { background: var(--mm-rail-2); color: #fff; }
+/* Muesca de forja: marca el módulo activo */
+.item[data-active]::before { content: ''; position: absolute; left: -10px; top: 6px; bottom: 6px; width: 3px; background: var(--mm-forge); border-radius: 0 2px 2px 0; }
+.text { display: flex; flex-direction: column; flex: 1; min-width: 0; line-height: 1.15; }
+.text b { font-size: 13.5px; font-weight: 600; }
+.text small { font-size: 11px; opacity: 0.65; margin-top: 2px; }
+.item em { font-style: normal; font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; border-radius: var(--mm-r-xs); background: rgba(255,255,255,0.08); color: var(--mm-rail-ink); }
+.item[data-active] em { background: var(--mm-forge); color: #14161b; font-weight: 600; }
+
+.me { display: flex; align-items: center; gap: 10px; padding: 14px 14px; border-top: 1px solid var(--mm-rail-line); }
+.avatar { width: 30px; height: 30px; display: grid; place-items: center; background: var(--mm-rail-2); border-radius: var(--mm-r-xs); font-family: var(--font-mono); font-size: 11px; font-weight: 600; box-shadow: inset 0 0 0 1px var(--mm-rail-line); }
+.meText { display: flex; flex-direction: column; line-height: 1.2; flex: 1; min-width: 0; }
+.meText b { font-size: 12.5px; font-weight: 600; }
+.meText small { font-size: 10.5px; color: var(--mm-rail-ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.out { color: var(--mm-rail-ink-3); display: grid; place-items: center; width: 28px; height: 28px; border-radius: var(--mm-r-xs); }
+.out:hover { background: var(--mm-rail-2); color: #fff; }
+
+.moreBtn { display: none; }
+.sheet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding-bottom: 12px; }
+.sheet a { display: grid; justify-items: center; gap: 6px; padding: 14px 6px; text-decoration: none; color: var(--mm-ink); background: var(--mm-sunken); border: 1px solid var(--mm-line); font-size: 12.5px; font-weight: 600; text-align: center; }
+.sheet a[data-active] { border-color: var(--mm-forge); box-shadow: inset 0 -3px 0 var(--mm-forge); }
+/* Móvil / tablet: riel → barra inferior de pulgar */
+@media (max-width: 62em) {
+  .collapse { display: none; }
+  .rail { inset: auto 0 0 0; width: 100%; height: 60px; flex-direction: row; align-items: stretch; border-top: 1px solid var(--mm-rail-line); padding-bottom: env(safe-area-inset-bottom); height: calc(60px + env(safe-area-inset-bottom)); }
+  .brand, .me, .groupLabel, .text small, .item em { display: none; }
+  .nav { flex: 1; display: flex; padding: 0; gap: 0; overflow: visible; }
+  .group { display: contents; }
+  .item[data-hide] { display: none; }
+  .moreBtn { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: none; border: 0; color: var(--mm-rail-ink-3); cursor: pointer; font: inherit; }
+  .moreBtn b { font-size: 10px; font-weight: 600; }
+  .item { flex: 1; flex-direction: column; justify-content: center; gap: 3px; padding: 0 2px; border-radius: var(--mm-r-xs); }
+  .text { flex: none; align-items: center; }
+  .text b { font-size: 9.5px; font-weight: 600; letter-spacing: -0.02em; white-space: nowrap; }
+  .item[data-active]::before { left: 20%; right: 20%; top: 0; bottom: auto; width: auto; height: 3px; border-radius: 0 0 2px 2px; }
+}
+
+/* Pantallas bajas: menú más compacto para que quepan los 15 módulos */
+@media (min-width: 62.01em) and (max-height: 1000px) {
+  .text small { display: none; }
+  .item { padding-block: 7px; }
+  .nav { gap: 12px; padding-block: 10px; }
+  .groupLabel { padding-bottom: 3px; }
+}
+
+/* Colapsado: solo en escritorio */
+@media (min-width: 62.01em) {
+  .rail[data-collapsed] .brand span, .rail[data-collapsed] .text, .rail[data-collapsed] .groupLabel, .rail[data-collapsed] .meText, .rail[data-collapsed] .out { display: none; }
+  .rail[data-collapsed] .brand { justify-content: center; padding-inline: 0; }
+  .rail[data-collapsed] .nav { padding-inline: 12px; gap: 12px; }
+  .rail[data-collapsed] .item { justify-content: center; padding: 10px 0; }
+  .rail[data-collapsed] .item em { position: absolute; top: 3px; right: 3px; padding: 0 4px; font-size: 9px; }
+  .rail[data-collapsed] .item[data-active]::before { left: -12px; }
+  .rail[data-collapsed] .me { justify-content: center; padding-inline: 0; }
+}

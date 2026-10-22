@@ -1,0 +1,143 @@
+:root {
+  /* Paleta de marca: azul marino (SGO) + naranja forja (logo) + gris acero */
+  --mm-canvas: #ebe9e4;
+  --mm-surface: #fbfaf7;
+  --mm-card: #ffffff;
+  --mm-sunken: #f1efe9;
+  --mm-hl: #f6efe2;
+  --mm-line: rgba(15, 27, 45, 0.13);
+  --mm-line-strong: rgba(15, 27, 45, 0.28);
+  --mm-tint-1: rgba(15, 27, 45, 0.035);
+  --mm-tint-2: rgba(15, 27, 45, 0.09);
+
+  --mm-ink: #0f1b2d;
+  --mm-ink-2: #3a4960;
+  --mm-ink-3: #566275;
+  --mm-ink-4: #646f82;
+  --mm-inverse: #0b2748;   /* bloques oscuros fijos (cabeceras, placas) */
+  --mm-frame: #0f1b2d;     /* marcos y reglas fuertes */
+  --mm-on-accent: #0b1b30;
+
+  --mm-rail: #0b2748;
+  --mm-rail-2: #12365f;
+  --mm-rail-line: rgba(255, 255, 255, 0.1);
+  --mm-rail-ink: #eaf0f8;
+  --mm-rail-ink-3: #8fa3be;
+
+  --mm-navy: #0b2748;
+  --mm-forge: #f28c28;
+
+  --mm-ok: #1f7a4d;
+  --mm-warn: #d4921a;
+  --mm-crit: #c23a29;
+  --mm-ok-bg: #e3f3ea;
+  --mm-crit-bg: #fbe8e4;
+  --mm-warn-bg: #fbf0d8;
+  --mm-warn-ink: #8a5d0a;
+
+  --mm-area-estructura: #3a7bd5;
+  --mm-area-mecanica: #8a5cd6;
+  --mm-area-mecanizado: #e6892a;
+  --mm-area-olla: #1f9a8a;
+  --mm-area-ing: #c2417a;
+
+  --mm-ph1a: #d9d6cc; --mm-ph1b: #e3e0d6;
+  --mm-ph2a: #cfd3d6; --mm-ph2b: #dadde0;
+  --mm-ph3a: #dcd3c6; --mm-ph3b: #e6ddd0;
+
+  --mm-shadow-1: 0 0 0 1px var(--mm-line);
+  --mm-shadow-2: 0 0 0 1px var(--mm-line-strong), 0 8px 24px -12px rgba(15, 27, 45, 0.3);
+  --mm-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --mm-rail-w: 232px;
+
+  /* Esquinas: suaves, de más pequeño a más grande */
+  --mm-r-xs: 6px;
+  --mm-r-sm: 8px;
+  --mm-r-md: 12px;
+  --mm-r-lg: 16px;
+  --mm-r-pill: 999px;
+}
+
+[data-mantine-color-scheme='dark'] {
+  --mm-canvas: #0a1220;
+  --mm-surface: #101c30;
+  --mm-card: #14233a;
+  --mm-sunken: #0d1727;
+  --mm-hl: #1b2840;
+  --mm-line: rgba(255, 255, 255, 0.1);
+  --mm-line-strong: rgba(255, 255, 255, 0.2);
+  --mm-tint-1: rgba(255, 255, 255, 0.04);
+  --mm-tint-2: rgba(255, 255, 255, 0.1);
+
+  --mm-ink: #e8ecf3;
+  --mm-ink-2: #b8c2d3;
+  --mm-ink-3: #8593aa;
+  --mm-ink-4: #7686a0;
+  --mm-inverse: #1b3558;
+  --mm-frame: rgba(255, 255, 255, 0.3);
+
+  --mm-rail: #070d18;
+  --mm-rail-2: #0f1a2c;
+  --mm-rail-line: rgba(255, 255, 255, 0.08);
+
+  --mm-ok: #3fb37a;
+  --mm-warn: #e5ab3a;
+  --mm-crit: #ef6a57;
+  --mm-ok-bg: #12301f;
+  --mm-crit-bg: #3a1714;
+  --mm-warn-bg: #3a2d0f;
+  --mm-warn-ink: #f0c25a;
+
+  --mm-ph1a: #1a2a42; --mm-ph1b: #1f3250;
+  --mm-ph2a: #18283f; --mm-ph2b: #1d3049;
+  --mm-ph3a: #2a2a2e; --mm-ph3b: #313136;
+
+  --mm-shadow-2: 0 0 0 1px var(--mm-line-strong), 0 12px 28px -12px rgba(0, 0, 0, 0.6);
+  color-scheme: dark;
+}
+
+@media (min-width: 62.01em) { html[data-rail='collapsed'] { --mm-rail-w: 72px; } }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  background: var(--mm-canvas);
+  color: var(--mm-ink);
+  font-variation-settings: 'wdth' 100;
+  word-spacing: 0.06em;
+}
+h1, h2, h3, h4 { text-wrap: balance; letter-spacing: -0.01em; word-spacing: 0.12em; font-variation-settings: 'wdth' 94; }
+p { text-wrap: pretty; }
+/* los <button> reinician el espaciado entre palabras: heredarlo evita "Estasemana" */
+button, input, select, textarea { word-spacing: inherit; }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+
+/* Etiqueta de campo: la voz de los rótulos de plano */
+.cap { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mm-ink-3); font-weight: 500; }
+
+kbd { font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; border: 1px solid var(--mm-line-strong); background: var(--mm-sunken); color: var(--mm-ink); }
+/* Badges de Mantine: el uppercase junto a letter-spacing juntaba las palabras */
+.mantine-Badge-label { word-spacing: 0.22em; }
+/* los avisos viven sobre el selector de dispositivo y la barra inferior móvil */
+.mantine-Notifications-root[data-position^='bottom'] { bottom: calc(72px + env(safe-area-inset-bottom)) !important; }
+/* solo lectores de pantalla */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+/* foco visible coherente en toda la app */
+:focus-visible { outline: 2px solid var(--mm-forge); outline-offset: 2px; }
+.skip { position: fixed; left: 12px; top: -48px; z-index: 2000; padding: 10px 14px; background: var(--mm-forge); color: var(--mm-on-accent); font-weight: 700; text-decoration: none; transition: top 140ms var(--mm-ease); }
+.skip:focus { top: 12px; }
+/* selección de texto y barras de desplazamiento con la paleta */
+::selection { background: color-mix(in srgb, var(--mm-forge) 35%, transparent); color: inherit; }
+* { scrollbar-width: thin; scrollbar-color: var(--mm-line-strong) transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* tarjetas y bloques sueltos con la misma suavidad */
+.mantine-Paper-root, .mantine-Popover-dropdown, .mantine-Menu-dropdown { border-radius: var(--mm-r-md); }
+.mantine-Modal-content, .mantine-Drawer-content { border-radius: var(--mm-r-lg); }
+.mantine-Drawer-content[data-position='bottom'] { border-radius: var(--mm-r-lg) var(--mm-r-lg) 0 0; }
+.mantine-Drawer-content[data-position='right'] { border-radius: var(--mm-r-lg) 0 0 var(--mm-r-lg); }
+
+.mantine-Button-label { white-space: nowrap; }
+.mantine-Button-root { flex-shrink: 0; }

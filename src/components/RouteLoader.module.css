@@ -1,0 +1,10 @@
+.top { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 3000; background: var(--mm-forge); transform-origin: left; transform: scaleX(0); opacity: 0; pointer-events: none; transition: opacity 260ms var(--mm-ease); }
+.top[data-on] { opacity: 1; animation: grow 0.9s var(--mm-ease) forwards; }
+@keyframes grow { from { transform: scaleX(0.05); } to { transform: scaleX(0.9); } }
+
+.veil { position: fixed; inset: 0; z-index: 900; display: grid; place-items: center; background: var(--mm-canvas); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 240ms var(--mm-ease), visibility 0s linear 240ms; }
+.veil[data-on] { opacity: 1; visibility: visible; pointer-events: auto; transition-delay: 0s; }
+/* en la app, el velo cubre solo el contenido: menú y barra superior siguen a la vista */
+.veil[data-app] { inset: 56px 0 0 var(--mm-rail-w); z-index: 25; }
+@media (max-width: 62em) { .veil[data-app] { inset: 52px 0 calc(60px + env(safe-area-inset-bottom)) 0; } }
+@media (prefers-reduced-motion: reduce) { .top[data-on] { animation: none; transform: scaleX(0.9); } .veil { transition-duration: 0.01ms; } }

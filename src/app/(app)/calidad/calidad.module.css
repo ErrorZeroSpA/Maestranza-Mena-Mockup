@@ -1,0 +1,19 @@
+.stats { display: flex; align-items: stretch; border-block: 1px solid var(--mm-line-strong); background: var(--mm-surface); margin-bottom: 18px; flex-wrap: wrap; }
+.stats > div:not(.seg) { padding: 12px 28px 12px 20px; margin-right: 0; border-right: 1px solid var(--mm-line); display: grid; gap: 4px; padding-left: 20px; }
+.stats > div:not(.seg) { display: grid; gap: 4px; }
+.stats b { font-size: 32px; font-weight: 800; line-height: 1; }
+.stats [data-hot] b { color: var(--mm-crit); }
+.stats .seg { margin-left: auto; align-self: center; margin-right: 14px; flex: none; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.item { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; background: var(--mm-surface); border: 1px solid var(--mm-line-strong); border-left: 5px solid var(--mm-ink-4); padding: 14px 16px; border-radius: var(--mm-r-md); overflow: clip; }
+.item[data-sev='Mayor'] { border-left-color: var(--mm-warn); }
+.item[data-sev='Crítica'] { border-left-color: var(--mm-crit); }
+.main { display: grid; gap: 8px; min-width: 0; }
+.top { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.main h3 { margin: 0; font-size: 17px; }
+.main p { margin: 0; font-size: 13.5px; color: var(--mm-ink-2); max-width: 78ch; }
+.accion { padding: 8px 10px; background: var(--mm-sunken); border-left: 3px solid var(--mm-ok); }
+.accion b { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-right: 8px; }
+.ops { display: flex; gap: 6px; align-items: center; flex: none; }
+.empty { display: grid; justify-items: center; gap: 8px; padding: 48px; color: var(--mm-ink-3); background: var(--mm-surface); border: 1px dashed var(--mm-line-strong); }
+@media (max-width: 48em) { .item { flex-direction: column; } .seg { margin: 8px 0 8px 12px; } }

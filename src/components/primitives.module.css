@@ -1,0 +1,33 @@
+.plate { display: inline-flex; align-items: baseline; gap: 6px; font-family: var(--font-mono); font-weight: 600; font-size: 12.5px; letter-spacing: 0.02em; color: #fff; background: var(--mm-rail); padding: 3px 8px 3px 7px; border-radius: var(--mm-r-xs); }
+.plateLabel { font-size: 9px; letter-spacing: 0.16em; color: var(--mm-forge); font-weight: 600; }
+.plate[data-size='lg'] { font-size: 22px; padding: 6px 12px 6px 10px; gap: 8px; }
+.plate[data-size='lg'] .plateLabel { font-size: 11px; }
+
+.seg { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; height: 8px; }
+.seg i { background: var(--mm-tint-2); }
+.seg i[data-on] { background: var(--mm-ok); }
+.seg[data-tone='warn'] i[data-on] { background: var(--mm-warn); }
+.seg[data-tone='crit'] i[data-on] { background: var(--mm-crit); }
+
+.route { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, 1fr); }
+.route li { position: relative; display: flex; flex-direction: column; gap: 8px; padding-top: 0; }
+.route li i { display: block; height: 6px; background: var(--mm-tint-2); margin-right: 2px; clip-path: polygon(0 0, calc(100% - 4px) 0, 100% 50%, calc(100% - 4px) 100%, 0 100%); }
+.route li[data-state='done'] i { background: var(--mm-inverse); }
+.route li[data-state='now'] i { background: var(--mm-forge); }
+
+.area { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mm-ink-2); }
+.area::before { content: ''; width: 8px; height: 8px; background: var(--c); }
+
+.dots { display: inline-flex; gap: 3px; }
+.dots i { width: 8px; height: 8px; background: var(--mm-ok); }
+.dots i[data-tone='warn'] { background: var(--mm-warn); }
+.dots i[data-tone='crit'] { background: var(--mm-crit); }
+
+.routeCap { margin: 10px 0 0; font-size: 13px; font-weight: 700; display: flex; gap: 8px; align-items: baseline; }
+.routeCap b { font-family: var(--font-mono); font-size: 11px; color: var(--mm-forge); }
+.routeCap em { font-style: normal; font-weight: 500; color: var(--mm-ink-3); font-size: 12px; }
+
+.plate { border-radius: var(--mm-r-xs); }
+.seg i { border-radius: 2px; }
+.dots i { border-radius: 3px; }
+.area::before { border-radius: 3px; }

@@ -1,0 +1,18 @@
+.head { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid var(--mm-line); }
+.head b { font-size: 14px; }
+.head div { display: flex; gap: 2px; }
+.head button { font: inherit; font-size: 12px; font-weight: 600; background: none; border: 0; padding: 4px 8px; color: var(--mm-ink-3); cursor: pointer; border-bottom: 2px solid transparent; }
+.head button[data-on] { color: var(--mm-ink); border-bottom-color: var(--mm-forge); }
+.head em { font-style: normal; font-family: var(--font-mono); font-size: 10px; background: var(--mm-forge); color: var(--mm-on-accent); padding: 0 5px; margin-left: 3px; }
+.list { list-style: none; margin: 0; padding: 0; max-height: 380px; overflow-y: auto; }
+.list li > button { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 10px; text-align: left; font: inherit; background: none; border: 0; border-bottom: 1px solid var(--mm-line); padding: 11px 14px; cursor: pointer; color: var(--mm-ink); position: relative; }
+.list li > button:hover { background: var(--mm-sunken); }
+.list li > button[data-unread]::before { content: ''; position: absolute; left: 4px; top: 50%; width: 6px; height: 6px; margin-top: -3px; background: var(--mm-forge); }
+.ico { width: 30px; height: 30px; display: grid; place-items: center; background: var(--mm-sunken); color: var(--mm-ink-2); box-shadow: inset 0 0 0 1px var(--mm-line); }
+.txt { display: grid; gap: 2px; min-width: 0; }
+.txt b { font-size: 13px; font-weight: 600; line-height: 1.3; }
+.txt small { font-size: 11.5px; color: var(--mm-ink-3); }
+.empty { padding: 32px; text-align: center; color: var(--mm-ink-3); font-size: 13px; }
+.foot { padding: 8px 14px; border-top: 1px solid var(--mm-line); }
+.foot button { font: inherit; font-size: 12.5px; font-weight: 700; background: none; border: 0; padding: 4px 0; color: var(--mm-ink); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--mm-forge); text-decoration-thickness: 2px; }
+.foot button:disabled { color: var(--mm-ink-4); text-decoration: none; cursor: default; }

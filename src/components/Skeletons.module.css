@@ -1,0 +1,7 @@
+.rows { background: var(--mm-surface); border: 1px solid var(--mm-line); }
+.row { display: grid; gap: 16px; align-items: center; padding: 18px 16px; border-bottom: 1px solid var(--mm-line); }
+.row i, .panel i { display: block; height: 12px; background: linear-gradient(90deg, var(--mm-tint-2) 25%, var(--mm-tint-1) 50%, var(--mm-tint-2) 75%); background-size: 200% 100%; animation: shimmer 1.3s linear infinite; animation-delay: var(--d, 0ms); }
+.panel { display: grid; gap: 14px; padding: 20px; background: var(--mm-surface); border: 1px solid var(--mm-frame); align-content: start; border-radius: var(--mm-r-lg); overflow: clip; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .row i, .panel i { animation: none; } }

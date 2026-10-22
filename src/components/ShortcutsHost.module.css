@@ -1,0 +1,8 @@
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cols h3 { margin: 0 0 6px; font-size: 13px; font-family: var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--mm-ink-3); font-weight: 500; }
+.cols h3 small { font-size: 11px; text-transform: none; letter-spacing: 0; }
+.cols dl { margin: 0 0 16px; }
+.cols dl > div { display: grid; grid-template-columns: 110px 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--mm-line); font-size: 13px; }
+.cols dt { display: flex; gap: 3px; }
+.cols dd { margin: 0; color: var(--mm-ink-2); }
+@media (max-width: 48em) { .cols { grid-template-columns: 1fr; } }

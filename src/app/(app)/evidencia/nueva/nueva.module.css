@@ -1,0 +1,22 @@
+.drop { width: 100%; display: grid; justify-items: center; gap: 10px; padding: 64px 24px; background: var(--mm-surface); border: 2px dashed var(--mm-line-strong); font: inherit; color: var(--mm-ink-2); cursor: pointer; text-align: center; transition: border-color 140ms, background 140ms; }
+.drop:hover { border-color: var(--mm-forge); background: var(--mm-hl); }
+.drop b { font-size: 18px; color: var(--mm-ink); }
+.drop small { color: var(--mm-ink-3); max-width: 38ch; }
+.drop span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; gap: 6px; align-items: center; color: var(--mm-ink-3); }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; align-items: start; }
+.form { display: grid; gap: 14px; background: var(--mm-surface); border: 1px solid var(--mm-frame); padding: 18px; border-radius: var(--mm-r-lg); overflow: clip; }
+.btns { display: flex; gap: 8px; }
+.done { max-width: 480px; display: grid; gap: 10px; padding: 36px 28px; background: var(--mm-surface); border: 1px solid var(--mm-frame); border-top: 5px solid var(--mm-ok); }
+.done svg { color: var(--mm-ok); }
+.done h2 { margin: 0; font-size: 22px; }
+.done p { margin: 0 0 8px; color: var(--mm-ink-3); }
+.done div { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 62em) { .grid { grid-template-columns: 1fr; } }
+
+.start { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+.tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.tips li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 14px; background: var(--mm-surface); border: 1px solid var(--mm-line-strong); border-radius: var(--mm-r-md); overflow: clip; }
+.tips b { width: 30px; height: 30px; display: grid; place-items: center; background: var(--mm-inverse); color: #fff; font-family: var(--font-mono); font-size: 13px; }
+.tips span { display: grid; gap: 2px; font-size: 12.5px; color: var(--mm-ink-3); line-height: 1.4; }
+.tips strong { color: var(--mm-ink); font-size: 14px; }
+@media (max-width: 62em) { .start { grid-template-columns: 1fr; } }

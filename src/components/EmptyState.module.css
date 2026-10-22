@@ -1,0 +1,5 @@
+.box { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 48px 24px; margin: 24px auto; max-width: 460px; background: var(--mm-surface); border: 1px dashed var(--mm-line-strong); color: var(--mm-ink-3); }
+.ico { color: var(--mm-ink-3); }
+.box h2 { margin: 0; font-size: 19px; color: var(--mm-ink); }
+.box p { margin: 0 0 6px; font-size: 13.5px; line-height: 1.5; }
+.box b { color: var(--mm-ink); }

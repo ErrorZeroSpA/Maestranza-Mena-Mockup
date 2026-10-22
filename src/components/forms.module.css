@@ -1,0 +1,6 @@
+.title { font-size: 16px; }
+.form { display: grid; gap: 14px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.row3 { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 12px; }
+.foot { display: flex; justify-content: flex-end; gap: 8px; padding-top: 8px; border-top: 1px solid var(--mm-line); }
+@media (max-width: 40em) { .row2, .row3 { grid-template-columns: 1fr; } }

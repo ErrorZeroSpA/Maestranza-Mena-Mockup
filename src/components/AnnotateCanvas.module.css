@@ -1,0 +1,6 @@
+.wrap { display: grid; gap: 10px; }
+.canvas { width: 100%; height: auto; max-height: 62dvh; object-fit: contain; background: #000; touch-action: none; cursor: crosshair; border: 1px solid var(--mm-frame); border-radius: var(--mm-r-lg); overflow: clip; }
+.tools { align-items: center; }
+.sw { width: 30px; height: 30px; border: 2px solid var(--mm-surface); box-shadow: 0 0 0 1px var(--mm-line-strong); cursor: pointer; transition: transform 120ms var(--mm-ease); }
+.sw[data-on] { box-shadow: 0 0 0 2px var(--mm-ink); transform: scale(1.08); }
+.sep { width: 1px; height: 24px; background: var(--mm-line-strong); margin: 0 4px; }
